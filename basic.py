@@ -1,9 +1,9 @@
-print('hello python')
-name = "Noman"
-a = 20 
-b = 20
-age = a+b 
-print(f"Hello, {name}. You are {age} years old.")
+# print('hello python')
+# name = "Noman"
+# a = 20 
+# b = 20
+# age = a+b 
+# print(f"Hello, {name}. You are {age} years old.")
 
 # val = input("Give me some money: ")
 # print(type(val))
@@ -14,18 +14,18 @@ print(f"Hello, {name}. You are {age} years old.")
 
 # conditons
 # a = int(input())
-if(a>20) :
-    print("20 ar theke boro")
-elif(a>=10):
-    print("10 ar theke boro")
-else: 
-  print("10 ar theke choto")
+# if(a>20) :
+#     print("20 ar theke boro")
+# elif(a>=10):
+#     print("10 ar theke boro")
+# else: 
+#   print("10 ar theke choto")
 
-ok = False
-if(ok is not True):
-  print("false")
-else:
-  print("true")
+# ok = False
+# if(ok is not True):
+#   print("false")
+# else:
+#   print("true")
 
 # num = 1
 # while num < 10:
@@ -45,5 +45,9 @@ else:
 # for i in range(1,11):
 #    print(i)
 
-for i in range(1,11, 2):
-   print(i)
+# for i in range(1,11, 2):
+#    print(i)
+
+def sum(val):
+  print(val+val)
+
