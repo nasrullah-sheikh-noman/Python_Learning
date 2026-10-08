@@ -15,3 +15,29 @@ print(nums[3], nums[-4])
 
 print(nums[:])
 print(nums[::-1])
+
+
+marks = [23, 87, 43, 12, 80, 45, 63, 71]
+print(marks)
+print(type(marks))
+
+all = [32, 'c', True, "noman", 43.43]
+print(all)
+
+print(all[0:len(all):2])
+print(all[3])
+
+for val in all:
+  print(val)
+
+all2 = [51, True, "string", 64.87, 'c']
+
+all2.append("Nasrullah")
+all2.append(75)
+all2.extend([90,21])
+all2 += [76, 61]
+all2.insert(2, 38)
+print(51 in all2)
+all2.clear()
+print(all2,   len(all2))
+
