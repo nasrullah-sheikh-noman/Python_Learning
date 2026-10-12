@@ -1,3 +1,2 @@
-with open("message.txt", "r") as file:
-  text = file.read()
-  print(text)
+for i in range(0,n):
+  pyautogui.write("#" * i)
