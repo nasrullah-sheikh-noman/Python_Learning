@@ -2,6 +2,7 @@
 class Phone:
   manufactured = "China"
 
+  # constructor
   def __init__(self, owner, brand, price):
     self.owner = owner
     self.brand = brand
