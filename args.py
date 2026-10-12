@@ -12,4 +12,11 @@ def all_sum(*args):
     sum+=num 
   print(sum)
 
-all_sum()
+all_sum(4, 8, 2)
+
+
+def add(*args):
+  print(args)
+  print(type(args))
+
+add(4, 6, 8)

@@ -20,3 +20,9 @@ print(type(personInfo2))
 
 for x, y in personInfo2.items():
   print(x, y)
+
+print(personInfo2)
+del personInfo2["age"]
+print(personInfo2)
+personInfo2["Job"] = "Bekar"
+print(personInfo2)

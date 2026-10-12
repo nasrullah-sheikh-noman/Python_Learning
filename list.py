@@ -40,4 +40,7 @@ all2.insert(2, 38)
 print(51 in all2)
 all2.clear()
 print(all2,   len(all2))
+print(marks)
+marks.remove(71)
+print(marks)
 
