@@ -1,19 +1,42 @@
-nums = [32, 43, 12, 8, 45, 63]
-# result = []
+class Grandpa:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  def __repr__(self):
+    return f'Name: {self.name}, Age: {self.age}'
 
-# for n in nums:
-#   if n % 2 == 0:
-#     result.append(n*2)
+class Father(Grandpa):
+  def __init__(self, name, age):
+    super().__init__(name, age)
 
-# print(result)
+class Uncle(Grandpa):
+  def __init__(self, name, age, district):
+    self.district = district
+    super().__init__(name, age)
+  def __repr__(self):
+    return super().__repr__() + f', District: {self.district}'
 
-# # Functional Programming
-# nums = [32, 43, 12, 8, 45, 63]
+class Anty:
+  def __init__(self, isMarried):
+    self.isMarried = isMarried
+  def __repr__(self):
+    return f'IaMarried: {self.isMarried}'
 
-# result = list(
-#   map(lambda n: n*2,
-#     filter(lambda n: n % 2 == 0, nums)
-#   ) 
-# )
+class MySelf(Father, Anty):
+  def __init__(self, name, age, isMarried):
+    Anty.__init__(self, isMarried)
+    Father.__init__(self, name, age)
+  def __repr__(self):
+    return f'{Father.__repr__(self)}, {Anty.__repr__(self)}'
 
-# print(result)
+class Cousin(Uncle, Anty):
+  def __init__(self, name, age, district, isMarried):
+    Uncle.__init__(self, name, age, district)
+    Anty.__init__(self, isMarried)
+  def __repr__(self):
+    return f'{Uncle.__repr__(self)}, {Anty.__repr__(self)}'
+
+noman = MySelf("Noman", 18, False)
+print(noman)
+nasrullah = Cousin("Nasrullah", 19, "Tokyo", True)
+print(nasrullah)

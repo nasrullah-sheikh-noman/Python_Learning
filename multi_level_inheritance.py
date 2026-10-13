@@ -18,15 +18,6 @@ class Bus(Vehicle):
   def __repr__(self):
     return super().__repr__() + f', Seat: {self.seat}'
 
-class Truck(Vehicle):
-  def __init__(self, name, price, weight):
-    self.weight = weight
-    super().__init__(name, price)
-
-class PickUpTruck(Truck):
-  def __init__(self, name, price, weight):
-    super().__init__(name, price, weight)
-
 class ACBus(Bus):
   def __init__(self, name, price, seat, temperature):
     self.temperature = temperature
