@@ -8,7 +8,7 @@ for n in nums:
 
 print(result)
 
-# # Functional Programming
+# Functional Programming
 nums = [32, 43, 12, 8, 45, 63]
 
 result = list(
