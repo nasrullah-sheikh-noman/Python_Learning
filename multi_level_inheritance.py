@@ -24,7 +24,7 @@ class ACBus(Bus):
     super().__init__(name, price, seat)
 
   def __repr__(self):
-    return super().__repr__() + f', Temperature: {self.temperature}'
+    return super().__repr__() + f', Temperature: {self.temperature} deg C'
 
 
 greenLineACBus = ACBus("Green line AC Bus", 3000000, 20, 17)

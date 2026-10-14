@@ -24,11 +24,7 @@ class Student(Family, School, Sports):
     Sports.__init__(self, game)
 
   def __repr__(self):
-    return (
-      f'{Family.__repr__(self)}, '
-      f'{School.__repr__(self)}, '
-      f'{Sports.__repr__(self)}'
-    )
+    return f'{Family.__repr__(self)}, {School.__repr__(self)}, {Sports.__repr__(self)}'
 
 
 noman = Student("Tokyo, London", 101, 12, "PUBG")

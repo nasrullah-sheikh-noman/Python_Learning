@@ -26,8 +26,8 @@ class Truck(Vehicle):
     return super().__repr__() + f', Weight: {self.weight}KG'
 
 
-greenLineACBus = Bus("Green Bus", 2000000, 40)
-print(greenLineACBus)
+greenLineBus = Bus("Green Bus", 2000000, 40)
+print(greenLineBus)
 
 lightTruck = Truck("Light Truck", 800000, 500)
 print(lightTruck)
