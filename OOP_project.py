@@ -2,8 +2,8 @@ class StudentDatabase:
   student_list = []
 
   @classmethod
-  def add_student(self, student):
-    self.student_list.append(student)
+  def add_student(cls, student):
+    cls.student_list.append(student)
 
   def view_all_student(self):
     print(f'Id\tName\tDept.\tEnrolled')
@@ -28,11 +28,11 @@ class StudentDatabase:
 
 
 class Student:
-  def __init__(self, __student_id, __name, __department, __is_enrolled):
-    self.__student_id = __student_id
-    self.__name = __name
-    self.__department = __department
-    self.__is_enrolled = __is_enrolled
+  def __init__(self, student_id, name, department, is_enrolled):
+    self.__student_id = student_id
+    self.__name = name
+    self.__department = department
+    self.__is_enrolled = is_enrolled
 
     StudentDatabase.add_student(self)
 
@@ -77,22 +77,22 @@ while True:
   print(f'1. View All Student')
   print(f'2. Enroll student')
   print(f'3. Drop Student')
-  print(f'4. Exists')
-  option = input("Enter your option: ")
-  if not option.isdigit():
-    print("Invalid input, Ener a valid number.")
+  print(f'4. Exist')
+  try:
+    option = int(input("Enter your option: "))
+  except ValueError:
+    print("Invalid input! Enter a valid number.")
     continue
-  option = int(option)
   if option == 1:
     print(f'\n================ View All Student =================\n')
     db.view_all_student()
   elif option == 2 or option == 3:
-    id = input("Enter student id: ")
-    if not id.isdigit():
-      print("Invalid student id, Enter a valid id number.")
+    try: 
+      student_id = int(input("Enter student ID: "))
+    except ValueError:
+      print("Invalid student ID! Enter a valid number")
       continue
-    id = int(id)
-    student = db.find_student(id)
+    student = db.find_student(student_id)
     if student is None:
       print("Student is not found")
     elif option == 2:
