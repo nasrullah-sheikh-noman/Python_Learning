@@ -8,7 +8,9 @@ class StudentDatabase:
   def view_all_student(self):
     print(f'Id\tName\tDept.\tEnrolled')
     for x in self.student_list:
-      print(*x.get_student_data(), sep='\t')
+      # print(*x.get_student_data(), sep='\t')
+      x.view_student_info()
+      print()
 
   # def enrolled_student(self):
   #   for x in self.student_list:
@@ -54,15 +56,14 @@ class Student:
   # def get_enrollment(self):
   #   return self.__is_enrolled
 
-  def get_student_data(self):
-    return (self.__student_id, self.__name, self.__department, self.__is_enrolled)
+  # def get_student_data(self):
+  #   return (self.__student_id, self.__name, self.__department, self.__is_enrolled)
 
   def view_student_info(self):
-    print("\n==================== Student Info =================\n")
-    print(f'Student id: {self.__student_id}')
-    print(f'Name: {self.__name}')
-    print(f'Dept. {self.__department}')
-    print(f'Enrolled: {self.__is_enrolled}')
+    print(f'{self.__student_id}', end='\t')
+    print(f'{self.__name}', end='\t')
+    print(f'{self.__department}', end='\t')
+    print(f'{self.__is_enrolled}', end='\t')
 
 db = StudentDatabase()
 std1 = Student(101, "Noman", "CSE", True)
