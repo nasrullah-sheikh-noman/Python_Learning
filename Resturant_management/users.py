@@ -29,7 +29,7 @@ class Customer(User):
     print(f'Name\tPrice\tQuantity')
     for item, quantity in self.cart.items.items():
       print(f'{item.name}\t{item.price}\t{quantity}')
-    print(f'Total Price: {self.cart.total_price}')
+    print(f'Total Price: {self.cart.total_price()}')
 
 class Order:
   def __init__(self):
@@ -100,7 +100,7 @@ class Menu:
 
   def find_item(self, item_name):
     for item in self.items:
-      if item.name.tolower() == item_name.tolower():
+      if item.name.lower() == item_name.lower():
         return item
     return None
 
@@ -137,3 +137,8 @@ admin.add_new_item(restaurant1, item2)
 customer1 = Customer("Rahim", 23234120324, "rahim@gmail.com", "Sylhet")
 # customer1.view_cart()
 customer1.view_menu(restaurant1)
+
+item_name = input("Enter item name: ")
+item_quantity = int(input("Enter item quantity: "))
+customer1.add_to_cart(restaurant1, item_name, item_quantity)
+customer1.view_cart()
