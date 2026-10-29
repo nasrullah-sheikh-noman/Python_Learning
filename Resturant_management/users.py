@@ -1,5 +1,6 @@
 from abc import ABC
 from orders import Order
+from menu import Menu
 
 class User(ABC):
   def __init__(self, name, phone, email, address):
@@ -63,8 +64,17 @@ class Admin(User):
   def add_new_item(self, restaurant, item):
     restaurant.menu.add_menu_item(item)
 
-  def remove_item(self, restaurant, item):
-    restaurant.remove_item(item)
+  def remove_item(self, restaurant, item_name):
+    restaurant.menu.remove_item(item_name)
+
+  def view_menu(self, restaurant):
+    restaurant.menu.show_menu()
+
+
+
+
+
+
 
 
 
@@ -72,20 +82,20 @@ class Admin(User):
 # ad = Admin("Nasrullah", 2354343, "nasrullah@gmail.com", "Tokyo")
 # ad.add_employee("Noman", 1245213412, "noman@gmail.com", "Barlin", 34, "Kamla", 8000)
 # ad.view_employees()
-restaurant1 = Restaurant("Bismillah Restaurant");
-admin = Admin("Karim", 3979823012, "karom@gmail.com", "Chittagang")
-item = FoodItem("Apple", 80, 10)
-item2 = FoodItem("Orange", 70, 20)
-admin.add_new_item(restaurant1, item)
-admin.add_new_item(restaurant1, item2)
+# restaurant1 = Restaurant("Bismillah Restaurant");
+# admin = Admin("Karim", 3979823012, "karom@gmail.com", "Chittagang")
+# item = FoodItem("Apple", 80, 10)
+# item2 = FoodItem("Orange", 70, 20)
+# admin.add_new_item(restaurant1, item)
+# admin.add_new_item(restaurant1, item2)
 
 
-customer1 = Customer("Rahim", 23234120324, "rahim@gmail.com", "Sylhet")
+# customer1 = Customer("Rahim", 23234120324, "rahim@gmail.com", "Sylhet")
 # customer1.view_cart()
-customer1.view_menu(restaurant1)
+# customer1.view_menu(restaurant1)
 
-item_name = input("Enter item name: ")
-item_quantity = int(input("Enter item quantity: "))
-customer1.add_to_cart(restaurant1, item_name, item_quantity)
-customer1.view_cart()
-customer1.view_menu(restaurant1)
+# item_name = input("Enter item name: ")
+# item_quantity = int(input("Enter item quantity: "))
+# customer1.add_to_cart(restaurant1, item_name, item_quantity)
+# customer1.view_cart()
+# customer1.view_menu(restaurant1)
