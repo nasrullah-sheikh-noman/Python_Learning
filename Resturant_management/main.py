@@ -26,7 +26,7 @@ def customer_menu():
       customer.view_menu(mamar_restaurant)
     elif choice == 2:
       item_name = input("Enter item name: ")
-      quantity = input("Enter item quantity: ")
+      quantity = int(input("Enter item quantity: "))
       customer.add_to_cart(mamar_restaurant, item_name, quantity)
     elif choice == 3:
       customer.view_cart()
@@ -81,3 +81,19 @@ def admin_menu():
       break
     else:
       print("Please choose a valid option.")
+
+while True:
+  print(f'Wellcome!!')
+  print(f'1. Customer')
+  print(f'2. Admin')
+  print(f'3. Exit')
+
+  choice = int(input("Enter your choice: "))
+  if choice == 1:
+    customer_menu()
+  elif choice == 2:
+    admin_menu()
+  elif choice == 3:
+    break
+  else:
+    print("Please choose a valid option.")

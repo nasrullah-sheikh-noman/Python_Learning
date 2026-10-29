@@ -11,6 +11,7 @@ class Restaurant:
 
   def view_employees(self):
     print(f'Employees list!')
+    print(f'Name\tEmail\tPhone\t')
     for emp in self.employees:
-      print(f'Name: {emp.name}, Email: {emp.email}, Phone: {self.phone}')
+      print(f'{emp.name}\t{emp.email}\t{emp.phone}')
 
