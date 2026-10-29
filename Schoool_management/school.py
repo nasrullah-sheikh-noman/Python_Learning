@@ -17,17 +17,17 @@ class School:
   @staticmethod
   def calculate_grade(marks):
     if marks >= 80 & marks <= 100:
-      return 'A+'
+      return "A+"
     elif marks >= 70 & marks < 80:
       return 'A'
     elif marks >= 60 & marks < 70:
-      return 'A-'
+      return "A-"
     elif marks >= 50 & marks < 60:
       return 'B'
     elif marks >= 40 & marks < 50:
       return 'C'
     elif marks >= 33 & marks < 40:
-      return "E"
+      return 'E'
     elif marks >= 0 & marks < 33:
       return 'F'
     else: return 'Invalid marks'
@@ -44,3 +44,29 @@ class School:
       'F' : 0.00
     }
     return grade_map[grade]
+
+  @staticmethod
+  def value_to_grade(value):
+    if value == 5.00:
+      return "A+"
+    elif value >= 4.00 & value < 5.00:
+      return 'A'
+    elif value >= 3.50 & value < 4.00:
+      return "A-"
+    elif value >= 3.00 & value < 3.50:
+      return 'B'
+    elif value >= 2.00 & value < 3.00:
+      return 'C'
+    elif value >= 1.00 & value < 2.00:
+      return 'D'
+    elif value >= 0.00 & value < 1.00:
+      return 'F'
+    else: return "Invalid number"
+
+  def __repr__(self):
+    # all classrooms
+    # all students
+    # all subjects
+    # all teachers
+    # all students results
+    pass
