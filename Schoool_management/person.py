@@ -23,11 +23,14 @@ class Student(Person):
     self.grade = None
 
   def final_grade(self):
+    if not self.subject_grade:
+      return "no grade availabe"
     sum = 0
     for grade in self.subject_grade.values():
       sum += School.grade_to_value(grade)
     gpa = sum / len(self.subject_grade)
     self.grade = School.value_to_grade(gpa)
+    return gpa
 
   @property
   def id(self):
