@@ -1,4 +1,5 @@
 from bus import Bus
+from main import admin_menu
 
 class Passenger:
   def __init__(self, name, phone, bus):
@@ -15,13 +16,12 @@ class Admin:
 
   def login(self):
     name = input("Enter your name")
-    password = input("Enter your password")
+    password = int(input("Enter your password"))
     if name == self.username and password == self.password:
       print("Congratulations! You're logged in.")
-      return True
+      admin_menu()
     else:
       print("Invalid username or password!")
-      return False
 
   def add_bus(self, number, route, total_seats):
     bus = Bus(number, route, total_seats)
