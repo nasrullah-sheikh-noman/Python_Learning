@@ -9,11 +9,11 @@ class Passenger:
 class Admin:
   def __init__(self):
     self.username = "admin"
-    self.password = 1234
+    self.password = '1234'
 
   def login(self):
-    name = input("Enter your name")
-    password = input("Enter your password")
+    name = input("Enter your name: ")
+    password = input("Enter your password: ")
     if name == self.username and password == self.password:
       print("Congratulations! You're logged in.")
       return True

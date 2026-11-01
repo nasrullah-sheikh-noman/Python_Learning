@@ -33,7 +33,12 @@ class BusSystem:
     if not self.buses:
       print("No buses availble!")
       return
+    print("#######################  Our Buses  #######################")
     for bus in self.buses:
-      print(f'Bus_number: {bus.number}, Availabe seats: {bus.unbooked_seats}')
+      print(f'Bus number: {bus.number}')
+      print(f'Availabe seats: {bus.available_seats}')
+      print(f'Total seats: {bus.total_seats}')
+      print(f'Booked seats: {bus.booked_seats}')
+      print("---------------------------------------------------------")
 
   

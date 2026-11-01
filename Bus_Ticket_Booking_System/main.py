@@ -1,11 +1,10 @@
 from users import Admin, Passenger
-from bus import Bus
+from bus_system import BusSystem
+
+system = BusSystem()
+admin = Admin()
 
 def admin_menu():
-  username = input("Enter your username: ")
-  password = int(input("Enter your password: "))
-  admin = Admin(username, password)
-
   while True:
     print("############  Wellcome to admin menu  ###########")
     print("1. Add Bus")
@@ -14,22 +13,18 @@ def admin_menu():
     option = int(input("Enter your option: "))
 
     if option == 1:
-      number = int(input("Enter bus number: "))
+      number = input("Enter bus number: ")
       route = input("Enter bus route: ")
       total_seats = int(input("Enter total seats: "))
-      admin.add_bus(number, route, total_seats)
+      system.add_bus(number, route, total_seats)
     elif option == 2:
-      admin.view_bus()
+      system.view_buses()
     elif option == 3:
       break
     else:
       print("Invalid option!")
 
 def user_manu():
-  name = input("Enter your name: ")
-  phone = input("Enter your phone number: ")
-  passenger = Passenger(name, phone, bus)
-
   while True:
     print("################  Wellcome User Menu  ##############")
     print("1. Admin Login")
@@ -39,15 +34,17 @@ def user_manu():
     option = int(input("Enter your option: "))
 
     if option == 1:
-      username = input("Enter your username: ")
-      password = input("Enter your password: ")
-      Admin(username, password).login()
+      if admin.login():
+        admin_menu()
     elif option == 2:
       # book ticket
-      pass
+      bus_number = input("Enter bus number: ")
+      name = input("Enter your name: ")
+      phone = input("Enter phone number: ")
+      system.book_ticket(bus_number, name, phone)
     elif option == 3:
       # view buses
-      pass
+      system.view_buses()
     elif option == 4:
       break
     else:
