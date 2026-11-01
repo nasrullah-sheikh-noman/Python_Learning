@@ -21,27 +21,7 @@ class Admin:
       print("Invalid username or password!")
       return False
 
-  def add_bus(self, number, route, total_seats):
-    bus = Bus(number, route, total_seats)
-    self.buses.append(bus)
-    print("Bus added successfully!")
 
-  def book_ticket(self, bus_number, name, phone):
-    for bus in self.buses:
-      if bus.number == bus_number:
-        if bus.unbooked_seats > 0:
-          passenger = Passenger(name, phone, bus)
-          self.passengers.append(passenger)
-          print("Booked ticket successfully!")
-          return True
-        else:
-          print("This bus no seat available!")
-          return False
-    print("This bus not found!")
-
-  def view_bus(self):
-    for bus in self.buses:
-      print(f'Bus_number: {bus.number}, Availabe seats: {bus.unbooked_seats}')
 
   
       
